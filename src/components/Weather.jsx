@@ -24,14 +24,14 @@ const Weather = () => {
   return (
     <div>
       {
-        <div class="weather-card">
-          <h1 class="city">{weatherData.name}</h1>
-          <p class="temperature">{weatherData.main.temp}</p>
-          <p class="conditions">{weatherData.weather[0].main}</p>
+        <div className="weather-card">
+          <h1 className="city">{weatherData.name}</h1>
+          <p className="temperature">{Math.round(weatherData.main.temp)}°C</p>
+          <p className="conditions">{weatherData.weather[0].main}</p>
           <img
             src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
             alt={weatherData.weather[0].description}
-            class="weather-icon"
+            className="weather-icon"
           />
         </div>
       }
