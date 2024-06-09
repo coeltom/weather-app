@@ -1,6 +1,6 @@
-// src/components/Weather.js
 import React, { useEffect, useState } from 'react';
 import { getWeatherByCoords } from '../api/weather';
+import './wether.css';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -24,14 +24,14 @@ const Weather = () => {
   return (
     <div>
       {
-        <div>
-          <h2>Weather in</h2>
-          <h1>{weatherData.name}</h1>
-          <p>{Math.round(weatherData.main.temp)}°C</p>
-          <p>{weatherData.weather[0].main}</p>
+        <div class="weather-card">
+          <h1 class="city">{weatherData.name}</h1>
+          <p class="temperature">{weatherData.main.temp}</p>
+          <p class="conditions">{weatherData.weather[0].main}</p>
           <img
             src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
             alt={weatherData.weather[0].description}
+            class="weather-icon"
           />
         </div>
       }
